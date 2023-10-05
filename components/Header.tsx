@@ -25,8 +25,8 @@ const Header: React.FC<HeaderProps> = ({ menu }) => {
       >
         <div className='flex lg:flex-1'>
           <Link href='/' className='-m-1.5 p-1.5 text-xl font-bold uppercase'>
-            <span className='sr-only'>Vence</span>
-            Vence
+            <span className='sr-only'>PixelBlok</span>
+            PixelBlok
           </Link>
         </div>
         <div className='flex lg:hidden'>
