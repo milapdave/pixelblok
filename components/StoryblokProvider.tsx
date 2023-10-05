@@ -9,6 +9,7 @@ import MenuLink from "./MenuLink";
 import HeroSlider from "./HeroSlider";
 import Article from "./Article";
 import AllArticles from "./AllArticles";
+import StoryblokLink from "./Button";
 
 // Define the prop type for the StoryblokProvider component
 interface StoryblokProviderProps {
@@ -21,6 +22,7 @@ const components = {
   hero_slider: HeroSlider,
   Article: Article,
   Blogs: AllArticles,
+  button: StoryblokLink,
 };
 
 /** 2. Initialize it as usual */
