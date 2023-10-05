@@ -7,6 +7,8 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { Page } from "./Page";
 import MenuLink from "./MenuLink";
 import HeroSlider from "./HeroSlider";
+import Article from "./Article";
+import AllArticles from "./AllArticles";
 
 // Define the prop type for the StoryblokProvider component
 interface StoryblokProviderProps {
@@ -17,6 +19,8 @@ const components = {
   page: Page, // Define a mapping of component names to their respective components. In this case, "page" maps to the Page component.
   menu_link: MenuLink,
   hero_slider: HeroSlider,
+  Article: Article,
+  Blogs: AllArticles,
 };
 
 /** 2. Initialize it as usual */
