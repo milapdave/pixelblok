@@ -12,7 +12,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ menu }) => {
   // State to manage mobile menu open/close
   const [menuOpen, setMenuOpen] = useState(false);
-
   // Function to toggle the mobile menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

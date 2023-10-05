@@ -5,6 +5,8 @@
 import { ReactNode } from "react";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { Page } from "./Page";
+import MenuLink from "./MenuLink";
+import HeroSlider from "./HeroSlider";
 
 // Define the prop type for the StoryblokProvider component
 interface StoryblokProviderProps {
@@ -13,6 +15,8 @@ interface StoryblokProviderProps {
 
 const components = {
   page: Page, // Define a mapping of component names to their respective components. In this case, "page" maps to the Page component.
+  menu_link: MenuLink,
+  hero_slider: HeroSlider,
 };
 
 /** 2. Initialize it as usual */

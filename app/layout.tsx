@@ -37,7 +37,7 @@ export default async function RootLayout({
     <StoryblokProvider>
       <html lang="en">
         <body
-          className={`flex min-h-screen flex-col text-base md:text-lg`}
+          className={`flex min-h-screen flex-col text-base md:text-lg bg-white`}
           suppressHydrationWarning={true}
         >
           {/* Include the Header component */}
