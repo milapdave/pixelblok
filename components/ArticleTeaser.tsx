@@ -10,27 +10,27 @@ interface ArticleTeaserProps {
 
 const ArticleTeaser: React.FC<ArticleTeaserProps> = ({ article }) => {
   return (
-    <div className="overflow-hidden rounded-sm">
+    <div className='overflow-hidden rounded-sm'>
       <Link href={`/blog/${article.slug}`}>
         <Image
-          className="object-cover object-center w-full mb-2"
+          className='mb-2 w-full object-cover object-center'
           src={article.image.filename}
           alt={article.title}
           width={1920}
           height={1080}
         />
       </Link>
-      <div className="py-4">
-        <div className="mb-4 text-xs text-light-dark">
+      <div className='py-4'>
+        <div className='mb-4 text-xs text-light-dark'>
           {moment(article.date).format('Do MMMM YYYY')}
         </div>
         <Link
           href={`/blog/${article.slug}`}
-          className="block mb-4 text-lg font-semibold leading-relaxed tracking-tighter"
+          className='mb-4 block text-lg font-semibold leading-relaxed tracking-tighter'
         >
           {article.title}
         </Link>
-        <div className="mx-auto text-sm leading-relaxed line-clamp-2">
+        <div className='mx-auto line-clamp-2 text-sm leading-relaxed'>
           {render(article.teaser)}
         </div>
       </div>

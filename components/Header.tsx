@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ menu }) => {
   return (
     <header className='bg-white'>
       <nav
-        className='mx-auto flex max-w-screen-2xl items-center justify-between p-6 lg:py-8 lg:px-8'
+        className='mx-auto flex items-center justify-between px-5 py-6 lg:px-24 lg:py-8 '
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ menu }) => {
           <button
             type='button'
             onClick={toggleMenu}
-            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+            className='text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5'
           >
             <span className='sr-only'>Open main menu</span>
             <svg

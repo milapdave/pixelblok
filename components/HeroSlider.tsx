@@ -38,7 +38,10 @@ const HeroSlider: React.FC<PopularArticlesProps> = ({ blok }) => {
 
   return (
     <>
-      <div className='slider-container max-w-screen-2xl mx-auto px-8' {...storyblokEditable(blok)}>
+      <div
+        className='slider-container px-5 lg:px-24'
+        {...storyblokEditable(blok)}
+      >
         <div
           className={`relative h-screen max-h-[calc(100vh-120px)] overflow-hidden md:max-h-[500px]`}
         >

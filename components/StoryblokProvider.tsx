@@ -1,15 +1,15 @@
 /** 1. Tag it as a client component */
-"use client"; // This comment indicates that this module is intended to run on the client side.
+'use client'; // This comment indicates that this module is intended to run on the client side.
 
 // Import necessary dependencies
-import { ReactNode } from "react";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import { Page } from "./Page";
-import MenuLink from "./MenuLink";
-import HeroSlider from "./HeroSlider";
-import Article from "./Article";
-import AllArticles from "./AllArticles";
-import StoryblokLink from "./Button";
+import { ReactNode } from 'react';
+import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
+import { Page } from './Page';
+import MenuLink from './MenuLink';
+import HeroSlider from './HeroSlider';
+import Article from './Article';
+import AllArticles from './AllArticles';
+import StoryblokLink from './Button';
 
 // Define the prop type for the StoryblokProvider component
 interface StoryblokProviderProps {
@@ -31,7 +31,7 @@ storyblokInit({
   use: [apiPlugin], // Use the Storyblok API plugin.
   components, // Provide the components mapping defined above to Storyblok for component rendering.
   apiOptions: {
-    region: "us", // Set the API region to "us".
+    region: 'us', // Set the API region to "us".
   },
 });
 

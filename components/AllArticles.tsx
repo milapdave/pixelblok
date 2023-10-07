@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ArticleTeaser from './ArticleTeaser';
-import { getStoryblokApi, storyblokEditable, ISbStoriesParams } from '@storyblok/react';
+import {
+  getStoryblokApi,
+  storyblokEditable,
+  ISbStoriesParams,
+} from '@storyblok/react';
 
 interface Article {
   slug: string;
@@ -41,7 +45,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
 
     // Define parameters for fetching data
     const sbParams: ISbStoriesParams = {
-        version: 'draft',
+      version: 'draft',
       starts_with: 'blog/', // Adjust the starts_with value as needed
       is_startpage: false,
       per_page: ITEMS_PER_PAGE,
@@ -59,7 +63,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   useEffect(() => {
     getData(ITEMS_PER_PAGE).then((result) => {
       // Set the slug property in the content object for each article
-      const updatedArticles = result.map((article:any) => {
+      const updatedArticles = result.map((article: any) => {
         article.content.slug = article.slug;
         return article.content;
       });
@@ -68,7 +72,12 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   }, [ITEMS_PER_PAGE]);
 
   return (
-    <div className={`mx-auto max-w-screen-2xl py-10 lg:px-8 grid w-full gap-8 ${getGridColumnClasses(columnOption)}`} {...storyblokEditable(blok)}>
+    <div
+      className={`grid w-full gap-8 px-5 py-10 lg:px-24 ${getGridColumnClasses(
+        columnOption
+      )}`}
+      {...storyblokEditable(blok)}
+    >
       {data.map((article) => (
         <ArticleTeaser article={article} key={article.slug} />
       ))}

@@ -27,9 +27,9 @@ const ArticleSlide: React.FC<ArticleSlideProps> = ({
         width={1920}
         height={1080}
       />
-      <div className='absolute bg-black bg-opacity-30 top-0 bottom-0 left-0 flex items-center justify-center text-center w-full text-white sm:py-10'>
+      <div className='absolute bottom-0 left-0 top-0 flex w-full items-center justify-center bg-black bg-opacity-30 text-center text-white sm:py-10'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6'>
-          <div className='mb-4 text-slate-200'>
+          <div className='text-slate-200 mb-4'>
             {moment(article.date).format('Do MMMM YYYY')}
           </div>
           <h1 className='mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter md:text-3xl'>

@@ -1,4 +1,4 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc';
 
 // Define the Props interface for the Page component
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 // Define the Page component as a React functional component
 export const Page: React.FC<Props> = ({ blok }) => (
-  <main {...storyblokEditable(blok)} className="flex-grow overflow-hidden">
+  <main {...storyblokEditable(blok)} className='flex-grow overflow-hidden'>
     <>
       {blok?.body?.map((nestedBlok: any) => (
         // Render nested components using StoryblokComponent and provide each nestedBlok's data and a unique key.

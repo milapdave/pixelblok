@@ -87,9 +87,7 @@ const RichTextRenderer = ({ content }) => {
   });
 
   return (
-    <div className={`rich_text_box prose max-w-none`}>
-      {renderedContent}
-    </div>
+    <div className={`rich_text_box prose max-w-none`}>{renderedContent}</div>
   ); // Render the rendered content
 };
 

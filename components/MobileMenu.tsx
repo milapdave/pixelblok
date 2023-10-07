@@ -11,7 +11,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menu, toggleMenu }) => {
     <div className='lg:hidden' role='dialog' aria-modal='true'>
       {/* Background backdrop, show/hide based on slide-over state. */}
       <div className='fixed inset-0 z-10'></div>
-      <div className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+      <div className='sm:ring-gray-900/10 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1'>
         <div className='flex items-center justify-between'>
           <Link href='/' className='-m-1.5 p-1.5 text-xl font-bold uppercase'>
             <span className='sr-only'>Vence</span>
@@ -20,7 +20,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menu, toggleMenu }) => {
           <button
             type='button'
             onClick={toggleMenu}
-            className='-m-2.5 rounded-md p-2.5 text-gray-700'
+            className='text-gray-700 -m-2.5 rounded-md p-2.5'
           >
             <span className='sr-only'>Close menu</span>
             <svg
@@ -40,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menu, toggleMenu }) => {
           </button>
         </div>
         <div className='mt-6 flow-root'>
-          <div className='-my-6 divide-y divide-gray-500/10'>
+          <div className='divide-gray-500/10 -my-6 divide-y'>
             <div className='space-y-2 py-6'>
               {menu?.header_menu?.map((nestedBlok: any) => (
                 <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />

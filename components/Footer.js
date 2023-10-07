@@ -1,14 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Footer = () => (
-  <footer
-    className='block w-full bg-dark'
-    aria-labelledby='footer-heading'
-  >
+  <footer className='block w-full bg-dark' aria-labelledby='footer-heading'>
     <h2 id='footer-heading' className='sr-only'>
       Footer
     </h2>
-    <div className='mx-auto max-w-screen-2xl px-6 py-12  sm:px-6 md:flex md:items-center md:justify-between lg:px-8 text-white'>
+    <div className='mx-auto max-w-screen-2xl px-6 py-12  text-white sm:px-6 md:flex md:items-center md:justify-between lg:px-8'>
       <div className='mb-8 flex justify-center space-x-6 md:order-last md:mb-0'>
         <Link href='#' className='text-gray-400 hover:text-gray-500'>
           <span className='sr-only'>Facebook</span>
@@ -83,11 +80,11 @@ const Footer = () => (
         </Link>
       </div>
       <div className='mt-8 md:order-1 md:mt-0'>
-        <span className='mt-2 text-sm font-light text-gray-500'>
+        <span className='text-gray-500 mt-2 text-sm font-light'>
           Copyright © 2017-2022
           <Link
             href='#'
-            className='text-wickedblue mx-2 hover:text-gray-500'
+            className='text-wickedblue hover:text-gray-500 mx-2'
             rel='noopener noreferrer'
           >
             Storyblok GmbH

@@ -81,8 +81,12 @@ const StoryblokLink: React.FC<StoryblokLinkProps> = ({ blok }) => {
 
   return (
     <div className={`${alignmentClasses} ${marginClasses}`}>
-      <Link href={blok?.link?.cached_url} className={`${linkClasses} text-white inline-flex rounded-sm font-semibold hover:bg-black`} passHref>
-          {blok?.label}
+      <Link
+        href={blok?.link?.cached_url}
+        className={`${linkClasses} inline-flex rounded-sm font-semibold text-white hover:bg-black`}
+        passHref
+      >
+        {blok?.label}
       </Link>
     </div>
   );
