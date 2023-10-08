@@ -43,10 +43,10 @@ const HeroSlider: React.FC<PopularArticlesProps> = ({ blok }) => {
         {...storyblokEditable(blok)}
       >
         <div
-          className={`relative h-screen max-h-[calc(100vh-120px)] overflow-hidden md:max-h-[500px]`}
+          className={`relative h-screen max-h-[calc(100vh-120px)] overflow-hidden md:max-h-[620px]`}
         >
-          {blok.articles.map((article, index) => {
-            article.content.slug = article.slug;
+          {blok?.articles.map((article, index) => {
+            article.content.slug = article?.slug;
             return (
               <ArticleSlide
                 currentSlide={currentSlide}

@@ -14,18 +14,19 @@ const config: Config = {
       white: '#FFFFFF',
       black: '#000000',
       dark: '#212529',
-      gray: '#E5E5E5',
+      gray: '#C4C4C4',
       'light-dark': '#495057',
       transparent: 'transparent',
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['var(--font-josefin-sans)'],
+        work: ['var(--font-josefin-sans)'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;

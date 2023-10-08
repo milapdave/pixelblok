@@ -26,12 +26,12 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   const getGridColumnClasses = (columnOption: string | undefined) => {
     switch (columnOption) {
       case '3':
-        return 'grid-cols-3';
+        return 'lg:grid-cols-3';
       case '4':
-        return 'grid-cols-4';
+        return 'xl:grid-cols-4';
       // Add more column cases as needed
       default:
-        return 'grid-cols-3'; // Default to 3 columns
+        return 'lg:grid-cols-3'; // Default to 3 columns
     }
   };
 
@@ -73,7 +73,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
 
   return (
     <div
-      className={`grid w-full gap-8 px-5 py-10 lg:px-24 ${getGridColumnClasses(
+      className={`grid w-full gap-8 px-5 py-10 lg:px-24 md:grid-cols-3 ${getGridColumnClasses(
         columnOption
       )}`}
       {...storyblokEditable(blok)}

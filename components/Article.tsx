@@ -18,17 +18,17 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = ({ blok }) => {
   return (
-    <section className=''>
+    <section className='lg:px-24 px-5'>
       <div className='flex flex-col items-center justify-center'>
-        <div className='relative w-full'>
+        <div className='relative w-full mb-10 '>
           <Image
-            className='mb-10 w-full rounded object-cover object-center md:h-[500px]'
+            className='w-full rounded object-cover object-center md:h-[500px] '
             alt={blok.image.alt}
             src={blok.image.filename}
             width={1920}
             height={1080}
           />
-          <div className='absolute left-1/2 top-1/2 w-full max-w-2xl -translate-x-2/4 -translate-y-2/4 text-center text-white'>
+          <div className='absolute w-full top-0 bottom-0 left-0 right-0 text-center text-white bg-black bg-opacity-30 flex flex-col justify-center items-center'>
             <div className='text-slate-200 mb-4'>
               {moment(blok.date).format('Do MMMM YYYY')}
             </div>

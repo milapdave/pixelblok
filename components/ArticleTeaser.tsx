@@ -26,7 +26,7 @@ const ArticleTeaser: React.FC<ArticleTeaserProps> = ({ article }) => {
         </div>
         <Link
           href={`/blog/${article.slug}`}
-          className='mb-4 block text-lg font-semibold leading-relaxed tracking-tighter'
+          className='mb-4 block text-lg font-semibold leading-snug tracking-tighter'
         >
           {article.title}
         </Link>
