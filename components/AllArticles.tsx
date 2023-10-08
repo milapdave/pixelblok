@@ -15,6 +15,7 @@ interface AllArticlesProps {
   blok: {
     show_posts: string; // You may adjust the type based on your data
     column_option?: string; // You may adjust the type based on your data
+    heading: string;
   };
 }
 
@@ -72,15 +73,20 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   }, [ITEMS_PER_PAGE]);
 
   return (
-    <div
-      className={`grid w-full gap-8 px-5 py-10 lg:px-24 md:grid-cols-3 ${getGridColumnClasses(
-        columnOption
-      )}`}
-      {...storyblokEditable(blok)}
-    >
-      {data.map((article) => (
-        <ArticleTeaser article={article} key={article.slug} />
-      ))}
+    <div className='py-10 px-5 lg:px-24'>
+      <div className='grid w-full gap-8 py-10'>
+        <h2>{blok.heading}</h2>
+      </div>
+      <div
+        className={`grid w-full gap-8  md:grid-cols-3  ${getGridColumnClasses(
+          columnOption
+        )}`}
+        {...storyblokEditable(blok)}
+      >
+        {data.map((article) => (
+          <ArticleTeaser article={article} key={article.slug} />
+        ))}
+      </div>
     </div>
   );
 };
