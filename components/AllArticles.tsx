@@ -74,7 +74,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
 
   return (
     <div className='py-10 px-5 lg:px-24'>
-      <div className='grid w-full gap-8 py-10'>
+      <div className='grid w-full gap-8 py-10 text-2xl'>
         <h2>{blok.heading}</h2>
       </div>
       <div
