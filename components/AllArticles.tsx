@@ -16,18 +16,18 @@ interface AllArticlesProps {
     show_posts: string; // You may adjust the type based on your data
     column_option?: string; // You may adjust the type based on your data
     heading: string;
+    style: string;
   };
 }
 
 const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
-  const [articles, setArticles] = useState<Article[]>([]);
   const [tags, setTags] = useState<Article[]>([]);
   const [page, setPage] = useState(1);
   const [checkedTags, setCheckedTags] = useState<string>();
   const [newDataLoaded, setNewDataLoaded] = useState(false);
 
   // Convert the string value to a number for items per page
-  const ITEMS_PER_PAGE = parseInt(blok.show_posts, 10);
+  const ITEMS_PER_PAGE = 4; // parseInt(blok.show_posts, 10);
 
   useEffect(() => {
     getData(ITEMS_PER_PAGE, page);
@@ -72,15 +72,24 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
     // Fetch data from Storyblok
     const { data } = await storyblokApi.get(`cdn/stories`, sbParams);
 
-    const updatedArticles = data.stories.map((article: any) => {
+    const articlesWithSlug = data.stories.map((article: any) => {
       article.content.slug = article.slug;
       return article.content;
     });
-    // setData((prevArticles) => [...prevArticles, ...updatedArticles]);
 
-    setData(updatedArticles);
+    setData((prevArticles) => [...prevArticles, ...articlesWithSlug]);
 
-    // return data.stories;
+    // Check if new data has been loaded and update the state accordingly
+    if (
+      articlesWithSlug.length > 0 &&
+      articlesWithSlug.length === ITEMS_PER_PAGE
+    ) {
+      setNewDataLoaded(true);
+    } else {
+      setNewDataLoaded(false);
+    }
+
+    // setData(updatedArticles);
   };
 
   const fetchTags = async () => {
@@ -146,14 +155,16 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
           <ArticleTeaser article={article} key={article.slug} />
         ))}
       </div>
-      <div className='pt-20 text-center'>
-        <button
-          className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'
-          onClick={handleNextClick}
-        >
-          More Articles
-        </button>
-      </div>
+      {(newDataLoaded && blok.style === 'all') && (
+        <div className='pt-20 text-center'>
+          <button
+            className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'
+            onClick={handleNextClick}
+          >
+            More Articles
+          </button> 
+        </div>
+      )}
     </div>
   );
 };
