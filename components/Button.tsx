@@ -67,7 +67,7 @@ const StoryblokLink: React.FC<StoryblokLinkProps> = ({ blok }) => {
       case 'small':
         return 'my-2';
       default:
-        return 'my-4'; // No margin class by default
+        return 'my-10'; // No margin class by default
     }
   };
 
