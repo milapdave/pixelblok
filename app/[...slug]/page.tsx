@@ -31,7 +31,11 @@ const fetchData = (slug: any) => {
   // Define parameters for the Storyblok API request
   const sbParams: ISbStoriesParams = {
     version: preview ? 'draft' : 'published',
-    resolve_relations: ['hero_slider.articles'],
+    resolve_relations: [
+      'hero_slider.articles',
+      'featured_topics.select_topics',
+      'trending_topics.select_trending_topics',
+    ],
   };
 
   // Fetch data from the Storyblok API and return the promise

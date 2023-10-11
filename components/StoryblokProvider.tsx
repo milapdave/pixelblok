@@ -11,6 +11,7 @@ import Article from './Article';
 import AllArticles from './AllArticles';
 import StoryblokLink from './Button';
 import FeaturedTopics from './FeaturedTopics';
+import TrendingTopics from './TrendingTopics';
 
 // Define the prop type for the StoryblokProvider component
 interface StoryblokProviderProps {
@@ -25,6 +26,7 @@ const components = {
   Blogs: AllArticles,
   button: StoryblokLink,
   featured_topics: FeaturedTopics,
+  trending_topics: TrendingTopics,
 };
 
 /** 2. Initialize it as usual */
