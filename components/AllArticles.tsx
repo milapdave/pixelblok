@@ -25,6 +25,8 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   const [page, setPage] = useState(1);
   const [checkedTags, setCheckedTags] = useState<string>();
   const [newDataLoaded, setNewDataLoaded] = useState(false);
+  // State to store fetched data
+  const [data, setData] = useState<Article[]>([]);
 
   // Convert the string value to a number for items per page
   const ITEMS_PER_PAGE = 4; // parseInt(blok.show_posts, 10);
@@ -77,8 +79,6 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
       return article.content;
     });
 
-    setData((prevArticles) => [...prevArticles, ...articlesWithSlug]);
-
     // Check if new data has been loaded and update the state accordingly
     if (
       articlesWithSlug.length > 0 &&
@@ -89,7 +89,11 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
       setNewDataLoaded(false);
     }
 
-    // setData(updatedArticles);
+    if (page === 1) {
+      setData(articlesWithSlug);
+    } else {
+      setData((prevArticles) => [...prevArticles, ...articlesWithSlug]);
+    }
   };
 
   const fetchTags = async () => {
@@ -106,9 +110,6 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
     const { data } = await storyblokApi.get('cdn/tags', sbParams);
     setTags(data.tags);
   };
-
-  // State to store fetched data
-  const [data, setData] = useState<Article[]>([]);
 
   const handleNextClick = () => {
     setPage((prevPage) => prevPage + 1);
@@ -155,14 +156,14 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
           <ArticleTeaser article={article} key={article.slug} />
         ))}
       </div>
-      {(newDataLoaded && blok.style === 'all') && (
+      {newDataLoaded && blok.style === 'all' && (
         <div className='pt-20 text-center'>
           <button
             className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'
             onClick={handleNextClick}
           >
             More Articles
-          </button> 
+          </button>
         </div>
       )}
     </div>
