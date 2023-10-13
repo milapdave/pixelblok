@@ -126,7 +126,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
         <div className='flex items-center gap-4'>
           <div
             className={`cursor-pointer text-sm ${
-              checkedTags === 'All' ? 'font-bold' : ''
+              checkedTags === undefined ? 'font-bold' : ''
             }`}
             onClick={() => handleCheckboxChange('All')}
           >
