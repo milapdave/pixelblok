@@ -35,6 +35,7 @@ const fetchData = (slug: any) => {
       'hero_slider.articles',
       'featured_topics.select_topics',
       'trending_topics.select_trending_topics',
+      'featured_article.select_article',
     ],
   };
 
