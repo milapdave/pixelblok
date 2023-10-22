@@ -9,7 +9,6 @@ interface Props {
 }
 
 const TrendingTopics: React.FC<Props> = ({ blok }) => {
-  console.log(blok, 'blok');
   const topics = blok?.select_trending_topics || [];
 
   return (

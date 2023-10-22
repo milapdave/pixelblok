@@ -10,7 +10,6 @@ interface Props {
 }
 
 const FeaturedArticle: React.FC<Props> = ({ blok }) => {
-  console.log(blok, 'blokblokblokblok');
   const topics = blok?.select_article || [];
 
   return (
