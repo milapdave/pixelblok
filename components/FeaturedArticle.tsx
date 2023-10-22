@@ -1,9 +1,6 @@
 import React from 'react';
 import ArticleTeaser from './ArticleTeaser';
 import Link from 'next/link';
-import Image from 'next/image';
-import moment from 'moment';
-import { render } from 'storyblok-rich-text-react-renderer';
 
 interface Props {
   blok: any;
