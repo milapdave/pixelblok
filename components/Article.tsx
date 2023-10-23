@@ -18,9 +18,9 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = ({ blok }) => {
   return (
-    <section className='lg:px-24 px-5'>
+    <section className='px-5 lg:px-24'>
       <div className='flex flex-col items-center justify-center'>
-        <div className='relative w-full mb-10 '>
+        <div className='relative mb-10 w-full '>
           <Image
             className='w-full rounded object-cover object-center md:h-[500px] '
             alt={blok.image.alt}
@@ -28,7 +28,7 @@ const Article: React.FC<ArticleProps> = ({ blok }) => {
             width={1920}
             height={1080}
           />
-          <div className='absolute w-full top-0 bottom-0 left-0 right-0 text-center text-white bg-black bg-opacity-30 flex flex-col justify-center items-center'>
+          <div className='absolute bottom-0 left-0 right-0 top-0 flex w-full flex-col items-center justify-center bg-black bg-opacity-30 text-center text-white'>
             <div className='text-slate-200 mb-4'>
               {moment(blok.date).format('Do MMMM YYYY')}
             </div>
@@ -38,7 +38,7 @@ const Article: React.FC<ArticleProps> = ({ blok }) => {
           </div>
         </div>
         <div className='w-full text-center lg:w-2/3'>
-          <div className='prose lg:prose-xl mb-8 w-full max-w-none text-justify leading-relaxed'>
+          <div className='prose mb-8 w-full max-w-none text-justify leading-relaxed lg:prose-xl'>
             {<RichTextRenderer content={blok.content} />}
           </div>
         </div>

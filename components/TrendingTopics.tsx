@@ -22,16 +22,19 @@ const TrendingTopics: React.FC<Props> = ({ blok }) => {
           const isFirstItem = index === 0;
 
           return (
-            <div className={`${isFirstItem ? 'col-span-2' : ''}`} key={article.slug}>
+            <div
+              className={`${isFirstItem ? 'col-span-2' : ''}`}
+              key={article.slug}
+            >
               <div className='relative flex h-full gap-8' key={article.slug}>
                 <Image
-                  className='h-full w-full object-cover object-center max-h-[450px] min-h-[450px]'
+                  className='h-full max-h-[450px] min-h-[450px] w-full object-cover object-center'
                   src={article.content.image.filename}
                   alt={article.content.title}
                   width={1024}
                   height={1024} // Adjust the height as needed
                 />
-                <div className='absolute bottom-0 left-0 right-0 flex flex-col top-0 justify-end bg-black bg-opacity-30 text-white p-10'>
+                <div className='absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end bg-black bg-opacity-30 p-10 text-white'>
                   <div className='mb-4 text-xs text-gray'>
                     {moment(article.content.date).format('Do MMMM YYYY')}
                   </div>

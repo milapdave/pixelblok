@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { StoryblokComponent } from '@storyblok/react';
 import MobileMenu from './MobileMenu';
+import Logo from './Logo';
 
 interface HeaderProps {
   menu: any; // Replace 'any' with the actual type of your 'menu' prop
@@ -23,11 +24,8 @@ const Header: React.FC<HeaderProps> = ({ menu }) => {
         className='mx-auto flex items-center justify-between px-5 py-6 lg:px-24 lg:py-8 '
         aria-label='Global'
       >
-        <div className='flex lg:flex-1'>
-          <Link href='/' className='-m-1.5 p-1.5 text-xl font-bold uppercase'>
-            <span className='sr-only'>PixelBlok</span>
-            PixelBlok
-          </Link>
+        <div className='flex items-center lg:flex-1'>
+          <Logo blok={menu.logo} logo_text={menu.logo_text} />
         </div>
         <div className='flex lg:hidden'>
           <button
@@ -52,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ menu }) => {
             </svg>
           </button>
         </div>
-        <div className='hidden lg:flex lg:gap-x-12'>
+        <div className='hidden text-dark lg:flex lg:gap-x-12 '>
           {menu?.header_menu?.map((nestedBlok: any) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}

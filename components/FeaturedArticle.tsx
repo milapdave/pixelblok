@@ -24,7 +24,7 @@ const FeaturedArticle: React.FC<Props> = ({ blok }) => {
           })}
         </div>
       </div>
-      <div className='text-center my-10'>
+      <div className='my-10 text-center'>
         <Link
           href={blok?.more_button?.cached_url || ''}
           className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'

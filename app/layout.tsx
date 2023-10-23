@@ -53,7 +53,7 @@ export default async function RootLayout({
           {/* Render the children components */}
           {children}
           {/* Include the Footer component */}
-          <Footer />
+          <Footer blok={data?.story?.content} />
         </body>
       </html>
     </StoryblokProvider>

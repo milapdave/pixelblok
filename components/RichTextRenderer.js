@@ -1,4 +1,5 @@
 import { StoryblokComponent } from '@storyblok/react';
+import Link from 'next/link';
 import React from 'react';
 import {
   render,
@@ -65,25 +66,25 @@ const RichTextRenderer = ({ content }) => {
   // Define custom mark renderers for links using MARK_LINK
   const customMarkRenderers = {
     [MARK_LINK]: (children) => (
-      <a
-        href={props.href}
-        target={props.target}
-        rel={props.custom?.rel}
-        title={props.custom?.title}
+      <Link
+        href={props?.href}
+        target={props?.target}
+        rel={props?.custom?.rel}
+        title={props?.custom?.title}
       >
         {children}
-      </a>
+      </Link>
     ), // Render MARK_LINK as anchor tags with a blue color and underline
   };
 
   // Render the rich text content with custom node renderers
   const renderedContent = render(content, {
     nodeResolvers: customNodeRenderers,
-    markResolvers: customMarkRenderers,
-    defaultBlokResolver: (name, props) => {
-      const blok = { ...props, component: name };
-      return <StoryblokComponent blok={blok} key={props._uid} />;
-    },
+    // markResolvers: customMarkRenderers,
+    // defaultBlokResolver: (name, props) => {
+    //   const blok = { ...props, component: name };
+    //   return <StoryblokComponent blok={blok} key={props._uid} />;
+    // },
   });
 
   return (

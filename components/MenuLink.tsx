@@ -3,7 +3,7 @@ import Link from 'next/link';
 const MenuLink = ({ blok }: any) => {
   return (
     <Link
-      className='block border-b border-transparent py-1 text-base font-semibold text-dark hover:border-black'
+      className='block border-b border-transparent py-1 text-base font-semibold hover:border-black'
       href={blok.link.cached_url}
     >
       {blok.name}

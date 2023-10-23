@@ -27,7 +27,7 @@ const FeaturedTopics: React.FC<Props> = ({ blok }) => {
               <div className='flex gap-8' key={article.slug}>
                 <Link href={`/blog/${article.content.slug}`}>
                   <Image
-                    className='min-h-[180px] max-w-[180px] w-full min-w-[180px] object-cover object-center'
+                    className='min-h-[180px] w-full min-w-[180px] max-w-[180px] object-cover object-center'
                     src={article.content.image.filename}
                     alt={article.content.title}
                     width={180}

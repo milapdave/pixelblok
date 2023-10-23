@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { StoryblokComponent } from '@storyblok/react';
+import Logo from './Logo';
 
 interface MobileMenuProps {
   menu: any; // Replace 'any' with the actual type of your 'menu' prop
@@ -10,13 +11,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menu, toggleMenu }) => {
   return (
     <div className='lg:hidden' role='dialog' aria-modal='true'>
       {/* Background backdrop, show/hide based on slide-over state. */}
-      <div className='fixed inset-0 z-10'></div>
-      <div className='sm:ring-gray-900/10 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1'>
+      <div className='fixed inset-0 z-20'></div>
+      <div className='sm:ring-gray-900/10 fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-5 py-6 sm:max-w-sm sm:ring-1'>
         <div className='flex items-center justify-between'>
-          <Link href='/' className='-m-1.5 p-1.5 text-xl font-bold uppercase'>
-            <span className='sr-only'>Vence</span>
-            Vence
-          </Link>
+          <Logo blok={menu.logo} logo_text={menu.logo_text} />
           <button
             type='button'
             onClick={toggleMenu}
