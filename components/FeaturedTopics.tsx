@@ -54,26 +54,26 @@ const FeaturedTopics: React.FC<Props> = ({ blok }) => {
         </div>
         <div className='w-1/2'>
           {/* Content 2 */}
-          <div className='relative flex h-full gap-8' key={lastItem.slug}>
+          <div className='relative flex h-full gap-8' key={lastItem?.slug}>
             <Image
               className='h-full w-full object-cover object-center'
-              src={lastItem.content.image.filename}
-              alt={lastItem.content.title}
+              src={lastItem?.content?.image?.filename}
+              alt={lastItem?.content?.title}
               width={1024}
               height={1024} // Adjust the height as needed
             />
             <div className='absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white'>
               <div className='mb-4 text-xs text-gray'>
-                {moment(lastItem.content.date).format('Do MMMM YYYY')}
+                {moment(lastItem?.content.date).format('Do MMMM YYYY')}
               </div>
               <Link
-                href={`/blog/${lastItem.content.slug}`}
+                href={`/blog/${lastItem?.content?.slug}`}
                 className='mb-4 block text-2xl font-semibold leading-snug tracking-tighter'
               >
-                {lastItem.content.title}
+                {lastItem?.content?.title}
               </Link>
               <div className='mx-auto line-clamp-2 max-w-xs text-base leading-relaxed text-gray'>
-                {render(lastItem.content.teaser)}
+                {render(lastItem?.content?.teaser)}
               </div>
             </div>
           </div>
