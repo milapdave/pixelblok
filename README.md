@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PixelBlok - Next.js & Storyblok Blog Site
+
+Welcome to PixelBlok, a dynamic blog site that combines the power of Next.js for frontend development, Storyblok as the content management system, and Tailwind CSS for styling.
+
+## Prerequisites
+
+1. Node.js installed - [Download Node.js](https://nodejs.org/)
+2. Storyblok account - [Sign up for Storyblok](https://www.storyblok.com/)
+
+## Features
+
+- [Storyblok](https://www.storyblok.com/) integration for content management.
+- [Next.js](https://nextjs.org/) for server-rendered React applications.
+- [Prettier](https://prettier.io/) for code formatting.
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the Repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone [repository_link]
+   cd pixelblok
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Set up Storyblok**:
 
-## Learn More
+- Create a Storyblok account and set up a new space.
+- Obtain your Storyblok access token and set it as an environment variable in a `.env.local` file:
 
-To learn more about Next.js, take a look at the following resources:
+  ```
+    NEXT_PUBLIC_STORYBLOK_TOKEN=your_access_token
+    NEXT_PUBLIC_STORYBLOK_VERSION=draft
+  ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Run the Project:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm run dev
 
-## Deploy on Vercel
+Your blog site should be running at `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Layouts
+
+* Hero Slider: Select posts for the Hero Slider in Storyblok by tagging them accordingly.
+* Featured Posts: Choose featured posts in Storyblok to showcase in this section.
+* Featured Topics: Create topics and assign posts to them in Storyblok.
+
+## Issues
+
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/milapdave/pixelblok/issues/).
+
+## License
+
+PixelBlok is licensed under the MIT License.
