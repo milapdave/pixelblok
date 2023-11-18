@@ -16,9 +16,9 @@ const FeaturedTopics: React.FC<Props> = ({ blok }) => {
 
   return (
     <section className='bg-dark px-5 lg:px-24'>
-      <div className='flex'>
-        <div className='flex w-1/2 flex-col gap-8 py-24 xl:pr-24'>
-          <div className='mb-5 text-2xl text-white'>
+      <div className='gap-5 lg:flex'>
+        <div className='flex flex-col gap-8 py-10 lg:w-1/2 lg:py-24 xl:pr-24'>
+          <div className='text-2xl text-white lg:mb-5'>
             <h2>{blok.heading}</h2>
           </div>
           {topics.slice(0, lastIndex).map((article: any) => {
@@ -52,7 +52,7 @@ const FeaturedTopics: React.FC<Props> = ({ blok }) => {
             );
           })}
         </div>
-        <div className='w-1/2'>
+        <div className='pb-10 lg:w-1/2 lg:pb-0'>
           {/* Content 2 */}
           <div className='relative flex h-full gap-8' key={lastItem?.slug}>
             <Image

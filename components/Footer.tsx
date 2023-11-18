@@ -19,7 +19,7 @@ const Footer: React.FC<Props> = ({ blok }) => {
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
-      <div className='mx-auto px-5 text-white lg:px-24'>
+      <div className='mx-auto px-5 text-white lg:px-24 lg:text-start text-center'>
         <div className='py-12  md:flex md:items-center md:justify-between '>
           <div className='mb-8 flex justify-center space-x-6  md:mb-0'>
             <Logo blok={blok.logo} logo_text={blok.logo_text} />

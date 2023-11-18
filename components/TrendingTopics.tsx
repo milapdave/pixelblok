@@ -23,7 +23,7 @@ const TrendingTopics: React.FC<Props> = ({ blok }) => {
 
           return (
             <div
-              className={`${isFirstItem ? 'col-span-2' : ''}`}
+              className={`${isFirstItem ? 'lg:col-span-2 col-span-full' : 'col-span-full lg:col-span-1'} `}
               key={article.slug}
             >
               <div className='relative flex h-full gap-8' key={article.slug}>
