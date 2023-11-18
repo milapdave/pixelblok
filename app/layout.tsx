@@ -7,6 +7,8 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/components/StoryblokProvider';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { Josefin_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+
 
 // If loading a variable font, you don't need to specify the font weight
 const josefin_sans = Josefin_Sans({
@@ -54,6 +56,7 @@ export default async function RootLayout({
           {children}
           {/* Include the Footer component */}
           <Footer blok={data?.story?.content} />
+          <Analytics />
         </body>
       </html>
     </StoryblokProvider>
