@@ -83,7 +83,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     // Handle and log any errors that occur during metadata generation
-    console.error('Error generating metadata:', error);
+    // console.error('Error generating metadata:', error);
     throw error;
   }
 }

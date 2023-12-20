@@ -13,7 +13,6 @@ interface Props {
 }
 
 const Footer: React.FC<Props> = ({ blok }) => {
-  console.log(blok, 'copyright_text');
   return (
     <footer className='block w-full bg-dark' aria-labelledby='footer-heading'>
       <h2 id='footer-heading' className='sr-only'>

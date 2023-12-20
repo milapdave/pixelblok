@@ -9,7 +9,6 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ blok, logo_text }) => {
-  console.log(blok, 'asd');
   return (
     <Link href='/' className='text-xl font-bold uppercase'>
       <span className='sr-only'>{logo_text}</span>
