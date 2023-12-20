@@ -122,7 +122,7 @@ const AllArticles: React.FC<AllArticlesProps> = ({ blok }) => {
   return (
     <div className='px-5 py-10 lg:px-24'>
       <div className='flex w-full justify-between  py-10 text-2xl'>
-        <h2>{blok.heading}</h2>
+        <h2 className='font-semibold capitalize'>{blok.heading}</h2>
         <div className='flex items-center gap-4'>
           <div
             className={`cursor-pointer text-sm ${

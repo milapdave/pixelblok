@@ -11,7 +11,7 @@ const FeaturedArticle: React.FC<Props> = ({ blok }) => {
 
   return (
     <section className='px-5 py-10 lg:px-24'>
-      <div className='flex w-full justify-between py-10 text-2xl'>
+      <div className='flex w-full justify-between py-10 text-2xl font-semibold'>
         <h2>{blok.heading}</h2>
       </div>
       <div>
@@ -27,7 +27,7 @@ const FeaturedArticle: React.FC<Props> = ({ blok }) => {
       <div className='my-10 text-center'>
         <Link
           href={blok?.more_button?.cached_url || ''}
-          className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-semibold text-white hover:bg-black'
+          className='inline-flex rounded-sm bg-dark px-6 py-3 text-base font-medium text-white hover:bg-black'
         >
           {blok?.more_button?.label}
         </Link>

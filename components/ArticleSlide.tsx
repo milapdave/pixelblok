@@ -32,7 +32,7 @@ const ArticleSlide: React.FC<ArticleSlideProps> = ({
           <div className='text-slate-200 mb-4'>
             {moment(article.date).format('Do MMMM YYYY')}
           </div>
-          <h1 className='mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter md:text-3xl'>
+          <h1 className='mx-auto mb-8 text-2xl font-medium leading-none tracking-tighter md:text-3xl'>
             <Link href={`/blog/${article.slug}`}>{article.title}</Link>
           </h1>
         </div>

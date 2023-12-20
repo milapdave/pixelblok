@@ -6,15 +6,15 @@ import type { Metadata } from 'next';
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc';
 import StoryblokProvider from '@/components/StoryblokProvider';
 import { getStoryblokApi } from '@storyblok/react/rsc';
-import { Josefin_Sans } from 'next/font/google';
+import { Josefin_Sans, Poppins } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
 
 // If loading a variable font, you don't need to specify the font weight
-const josefin_sans = Josefin_Sans({
+const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-josefin-sans',
+  variable: '--font-poppins-sans',
 });
 
 import Header from '@/components/Header';
@@ -47,7 +47,7 @@ export default async function RootLayout({
     <StoryblokProvider>
       <html lang='en'>
         <body
-          className={`${josefin_sans.variable} flex min-h-screen flex-col bg-white font-sans text-base md:text-lg`}
+          className={`${poppins.variable} flex min-h-screen flex-col bg-white font-sans text-base md:text-lg`}
           suppressHydrationWarning={true}
         >
           {/* Include the Header component */}

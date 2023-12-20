@@ -13,7 +13,7 @@ const TrendingTopics: React.FC<Props> = ({ blok }) => {
 
   return (
     <div className='px-5 py-10 lg:px-24'>
-      <div className='flex w-full justify-between  py-10 text-2xl'>
+      <div className='flex w-full justify-between  py-10 text-2xl font-semibold'>
         <h2>{blok.heading}</h2>
       </div>
       <div className='grid grid-cols-3 gap-8'>
@@ -23,28 +23,35 @@ const TrendingTopics: React.FC<Props> = ({ blok }) => {
 
           return (
             <div
-              className={`${isFirstItem ? 'lg:col-span-2 col-span-full' : 'col-span-full lg:col-span-1'} `}
+              className={`${
+                isFirstItem
+                  ? 'col-span-full lg:col-span-2'
+                  : 'col-span-full lg:col-span-1'
+              } `}
               key={article.slug}
             >
-              <div className='relative flex h-full gap-8' key={article.slug}>
+              <div
+                className='group relative flex h-full gap-8 overflow-hidden'
+                key={article.slug}
+              >
                 <Image
-                  className='h-full max-h-[450px] min-h-[450px] w-full object-cover object-center'
+                  className='h-full max-h-[450px] min-h-[450px] w-full object-cover object-center transition duration-300 group-hover:scale-110'
                   src={article.content.image.filename}
                   alt={article.content.title}
                   width={1024}
                   height={1024} // Adjust the height as needed
                 />
-                <div className='absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end bg-black bg-opacity-30 p-10 text-white'>
+                <Link
+                  href={`/blog/${article.content.slug}`}
+                  className='absolute bottom-0 left-0 right-0 top-0 flex flex-col justify-end bg-black bg-opacity-60 p-10 text-white'
+                >
                   <div className='mb-4 text-xs text-gray'>
                     {moment(article.content.date).format('Do MMMM YYYY')}
                   </div>
-                  <Link
-                    href={`/blog/${article.content.slug}`}
-                    className='block text-xl font-semibold leading-snug tracking-tighter'
-                  >
+                  <h2 className='block text-xl font-medium leading-snug tracking-tighter'>
                     {article.content.title}
-                  </Link>
-                </div>
+                  </h2>
+                </Link>
               </div>
             </div>
           );

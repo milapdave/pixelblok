@@ -20,8 +20,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-josefin-sans)'],
-        work: ['var(--font-josefin-sans)'],
+        sans: ['var(--font-poppins-sans)'],
+        work: ['var(--font-poppins-sans)'],
       },
     },
   },

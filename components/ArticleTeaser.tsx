@@ -12,13 +12,15 @@ const ArticleTeaser: React.FC<ArticleTeaserProps> = ({ article }) => {
   return (
     <div className='overflow-hidden rounded-sm'>
       <Link href={`/blog/${article.slug}`}>
+        <div className='overflow-hidden group mb-2'>
         <Image
-          className='mb-2 w-full object-cover object-center'
+          className='w-full object-cover object-center transition duration-300 group-hover:scale-110'
           src={article.image.filename}
           alt={article.title}
           width={1920}
           height={1080}
         />
+        </div>
       </Link>
       <div className='py-4'>
         <div className='mb-4 text-xs text-light-dark'>
@@ -26,7 +28,7 @@ const ArticleTeaser: React.FC<ArticleTeaserProps> = ({ article }) => {
         </div>
         <Link
           href={`/blog/${article.slug}`}
-          className='mb-4 block text-lg font-semibold leading-snug tracking-tighter'
+          className='mb-4 block text-xl font-medium leading-snug tracking-tighter'
         >
           {article.title}
         </Link>
