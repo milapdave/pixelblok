@@ -8,7 +8,7 @@ import StoryblokProvider from '@/components/StoryblokProvider';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { Josefin_Sans, Poppins } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // If loading a variable font, you don't need to specify the font weight
 const poppins = Poppins({
@@ -54,6 +54,7 @@ export default async function RootLayout({
           <Header menu={data?.story?.content} />
           {/* Render the children components */}
           {children}
+          <SpeedInsights />
           {/* Include the Footer component */}
           <Footer blok={data?.story?.content} />
           <Analytics />
